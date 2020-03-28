@@ -2,20 +2,24 @@
 
 ## FastAPI 特性
 
-**FastAPI** 给您提供以下内容：
+**FastAPI** 提供了以下内容：
 
 ### 基于开放标准
 
-* <a href="https://github.com/OAI/OpenAPI-Specification" class="external-link" target="_blank"><strong>OpenAPI</strong></a> for API creation, including declarations of <abbr title="also known as: endpoints, routes">path</abbr> <abbr title="also known as HTTP methods, as POST, GET, PUT, DELETE">operations</abbr>, parameters, body requests, security, etc.
-* Automatic data model documentation with <a href="http://json-schema.org/" class="external-link" target="_blank"><strong>JSON Schema</strong></a> (as OpenAPI itself is based on JSON Schema).
-* Designed around these standards, after a meticulous study. Instead of an afterthought layer on top.
-* This also allows using automatic **client code generation** in many languages.
 
-### Automatic docs
+* 用于创建API的<a href="https://github.com/OAI/OpenAPI-Specification" class="external-link" target="_blank"><strong>OpenAPI</strong></a>包含了<abbr title="also known as: endpoints, routes">路径</abbr><abbr title="also known as HTTP methods, as POST, GET, PUT, DELETE">操作，</abbr>请求参数，请求体，安全性等说明。
+* 使用<a href="http://json-schema.org/" class="external-link" target="_blank"><strong>JSON Schema</strong></a> (OpenAPI本身就是基于JSON Schema的)自动生成数据模型文档。
+* 经过了缜密的研究，围绕这些标准被设计出来的。而不是想到什么就在顶层加上什么。
+* This also allows using automatic **client code generation** in many languages.
+* 这也允许在很多语言中使用自动**客户端代码生成**。
+### 自动生成文档
 
 Interactive API documentation and exploration web user interfaces. As the framework is based on OpenAPI, there are multiple options, 2 included by default.
 
+交互式API文档以及探索性web界面。因为该框架是基于OpenAPI，所以有很多可选选项，默认情况下设置了两个。
+
 * <a href="https://github.com/swagger-api/swagger-ui" class="external-link" target="_blank"><strong>Swagger UI</strong></a>, with interactive exploration, call and test your API directly from the browser.
+* <a href="https://github.com/swagger-api/swagger-ui" class="external-link" target="_blank"><strong>Swagger UI</strong></a>，with interactive exploration, call and test your API directly from the browser.
 
 ![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)
 
