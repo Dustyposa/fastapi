@@ -21,6 +21,7 @@ nav:
   - en: /
   - zh: /zh/
   - es: /es/
+- features.md
 markdown_extensions:
 - toc:
     permalink: true
