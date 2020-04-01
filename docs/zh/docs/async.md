@@ -1,18 +1,18 @@
-# 并发和 async / await
+# 并发和  async / await
 
 关于*路径操作函数*的`async def`语法的细节以及一些关于异步代码，并发，并行的一些背景知识。
 
-## 很忙?
+## 有点忙?
 
 <abbr title="太长了; 不要阅读"><strong>TL;DR:</strong></abbr>
 
-如果你在使用需要用`await`调用的第三库，像这样：
+如果你在使用需要用 `await` 调用的第三库，像这样：
 
 ```Python
 results = await some_library()
 ```
 
-那么，用`async def`声明你的*路径操作函数*，像这样： 
+那么，用 `async def` 声明你的*路径操作函数*，像这样： 
 
 ```Python hl_lines="2"
 @app.get('/')
@@ -23,11 +23,11 @@ async def read_results():
 
 !!! note
 
-​	你只能在用`async def`定义的函数内部使用`await`。
+​	你只能在用 `async def` 定义的函数内部使用 `await`。
 
 ---
 
-如果你正在使用和一些组件（数据库，API，文件系统，等等）交互的第三方库，它们还没有支持使用`await`，（这是目前大部分数据库相关的库的情况），那么正常声明你的*路径操作函数*，只用`def`，像这样：
+如果你正在使用和一些组件（数据库，API，文件系统，等等）交互的第三方库，它们还没有支持使用 `await`，（这是目前大部分数据库相关的库的情况），那么正常声明你的*路径操作函数*，只用 `def`，像这样：
 
 ```Python hl_lines="2"
 @app.get('/')
@@ -38,7 +38,7 @@ def results():
 
 ---
 
-如果你的应用（以某种方式）不需要和其他任何组件交互并等待其响应，那么用`async def`。
+如果你的应用（以某种方式）不需要和其他任何组件交互并等待其响应，那么用 `async def`。
 
 ---
 
@@ -46,27 +46,29 @@ def results():
 
 ---
 
-**注意**：你可以根据你的需要在*路径操作函数*中混合使用`def`和`async`，并使用最佳选项定义每一个函数。 FastAPI会用最合适的方式。
+**注意**：你可以根据你的需要在*路径操作函数*中混合使用 `def` 和 `async`，并使用最佳选项定义每一个函数。 FastAPI 会用最合适的方式。
 
-无论如何，在上面的任一情况中，FastAPI都可以以异步的方式工作，而且速度非常快。
+无论如何，在上面的任一情况中，FastAPI 都可以以异步的方式工作，而且速度非常快。
 
 但是按照上述的步骤，它能够进行一些性能优化。
 
-## Technical Details
+## 技术细节
 
-Modern versions of Python have support for **"asynchronous code"** using something called **"coroutines"**, with **`async` and `await`** syntax.
+较新的 Python 版本已经支持**“异步代码”**，使用带 **`async`  以及 `await`** 语法的**“协程”**。
 
-Let's see that phrase by parts in the sections below, below:
+让我们通过下面的章节来了解一下这些词语：
 
-* **Asynchronous Code**
-* **`async` and `await`**
-* **Coroutines**
+* **异步代码**
+* **`async` 和 `await`**
+* **协程**
 
-## Asynchronous Code
+## 异步代码
 
-Asynchronous code just means that the language has a way to tell the computer / program that at some point in the code, he will have to wait for *something else* to finish somewhere else. Let's say that *something else* is called "slow-file". 
+异步代码意味着该语言可以通过一种方式，告诉计算机/程序在代码中的一些位置，它必须等待*别的东西*在别的地方结束。让我们把*别的东西*叫做“慢文件”。
 
-So, during that time, the computer can go and do some other work, while "slow-file" finishes. 
+所以在这段时间内，计算机可以去做一些其他工作，到“慢文件”结束。
+
+
 
 Then the computer / program will come back every time it has a chance because it's waiting again, or whenever he finished all the work he had at that point. And it will see if any of the tasks he was waiting for has already finished doing whatever it had to do.
 
