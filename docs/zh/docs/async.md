@@ -68,9 +68,9 @@ def results():
 
 所以在这段时间内，计算机可以去做一些其他工作，到“慢文件”结束。
 
+然后计算机/程序会每当在再次等待新任务返回或者完成了当前正在执行的所有的工作时，回到原来停下的地方并继续执行它会看在等待的任务中，有没有任何一个任务已经完成它要做的任务了。
 
-
-Then the computer / program will come back every time it has a chance because it's waiting again, or whenever he finished all the work he had at that point. And it will see if any of the tasks he was waiting for has already finished doing whatever it had to do.
+再然后，它需要完成第一个任务（比如说，我们的“慢文件”），并继续执行任何与其相关的任务。
 
 And then it takes the first task to finish (let's say, our "slow-file") and continues whatever it had to do with it.
 
