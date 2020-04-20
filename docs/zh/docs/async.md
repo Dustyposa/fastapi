@@ -72,38 +72,37 @@ def results():
 
 再然后，它需要完成第一个任务（比如说，我们的“慢文件”），并继续执行任何与其相关的任务。
 
-And then it takes the first task to finish (let's say, our "slow-file") and continues whatever it had to do with it.
+“等待别的东西”通常是指相对“慢”（和处理器及 RAM 内存的速度相比）的 <abbr title="Input and Output">I/O</abbr>  操作，比如等待：
 
-That "wait for something else" normally refers to <abbr title="Input and Output">I/O</abbr> operations that are relatively "slow" (compared to the speed of the processor and the RAM memory), like waiting for:
+* 来自客户端通过网络发送的数据
+* 你的程序通过网络发送给客户端的数据
+* 通过系统读取磁盘文件的内容给你的程序
+* 你的程序给系统写到磁盘上的内容
+* 一个远程 API 操作
+* 要完成的数据库操作
+* 一个返回结果的数据库查询
+* 等等。
 
-* the data from the client to be sent through the network
-* the data sent by your program to be received by the client through the network
-* the contents of a file in the disk to be read by the system and given to your program
-* the contents your program gave to the system to be written to disk
-* a remote API operation
-* a database operation to finish
-* a database query to return the results
-* etc.
+由于执行时间大多都是由等待 <abbr title="Input and Output">I/O</abbr>  操作消耗，所以也叫它们“ I/O 密集型”。
 
-As the execution time is consumed mostly by waiting for <abbr title="Input and Output">I/O</abbr> operations, so they call them "I/O bound".
+被叫做“异步的”是因为计算机/程序不需要和慢任务“同步”，等待任务结束的确切时间，当有时间时就能拿到任务结果并继续工作。
 
-It's called "asynchronous" because the computer / program doesn't have to be "synchronized" with the slow task, waiting for the exact moment that the task finishes, while doing nothing, to be able to take the task result and continue the work.
+相反，作为一个“异步的”系统，任务一旦完成，任务可以排队稍作等待（几微秒），让计算机/程序完成它要完成的时间，之后回来获取任务结果，并继续处理它们。
 
-Instead of that, by being an "asynchronous" system, once finished, the task can wait in line a little bit (some microseconds) for the computer / program to finish whatever it went to do, and then come back to take the results and continue working with them.
+对于“同步的”（与“异步的”相反）来说，它们通常也会使用术语“ sequential （顺序的）”，因为计算机/程序在切换到不同的任务之前都会按照顺序执行所有步骤，即使这些任步骤需要等待。
 
-For "synchronous" (contrary to "asynchronous") they commonly also use the term "sequential", because the computer / program follows all the steps in sequence before switching to a different task, even if those steps involve waiting.
 
-### Concurrency and Burgers
+### 并发与汉堡包
 
-This idea of **asynchronous** code described above is also sometimes called **"concurrency"**. It is different from **"parallelism"**.
+上面描述的这种 **异步的** 代码思想有时也被叫做 **“并发”**。与 **”并行“** 不同。
 
-**Concurrency** and **parallelism** both relate to "different things happening more or less at the same time". 
+**并发** 和 **并行** 都是指“不同的事或多或少同时发生”。
 
-But the details between *concurrency* and *parallelism* are quite different.
+但是 *并发* 和 *并行* 之前的细节是完全不同的。
 
-To see the difference, imagine the following story about burgers:
+要想看清其中的区别，可以想象下面这个关于汉堡的故事：
 
-### Concurrent Burgers
+### 并发的汉堡
 
 You go with your crush to get fast food, you stand in line while the cashier takes the orders from the people in front of you.
 
