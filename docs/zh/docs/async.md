@@ -104,31 +104,31 @@ def results():
 
 ### 并发的汉堡
 
-You go with your crush to get fast food, you stand in line while the cashier takes the orders from the people in front of you.
+你和你对象一起去买快餐，你站成一排，收银员从你前面的人那里接订单。
 
-Then it's your turn, you place your order of 2 very fancy burgers for your crush and you.
+然后轮到你了，你为你的恋人和你点了两份非常美味的汉堡。
 
-You pay.
+到你支付的时候。
 
-The cashier says something to the guy in the kitchen so he knows he has to prepare your burgers (even though he is currently preparing the ones for the previous clients).
+收银员对在厨房里面的人说了一些什么，这样他知道他必须为你准备汉堡包（尽管他现在正在为之前的客户准备）。
 
-The cashier gives you the number of your turn.
+收银员给了你的取餐号。
 
-While you are waiting, you go with your crush and pick a table, you sit and talk with your crush for a long time (as your burgers are very fancy and take some time to prepare).
+在等待的时候，你和你对象人找了一张桌子，坐着和你对象聊了很长时间的天（因为你的汉堡非常美味，需要一些时间去准备）。
 
-As you are seating on the table with your crush, while you wait for the burgers, you can spend that time admiring how awesome, cute and smart your crush is.
+当你和你对象坐在餐桌上时，你在等汉堡的同时，你可以用这段时间来欣赏你的对象是多么的好，多么的可爱以及聪明。
 
-While waiting and talking to your crush, from time to time, you check the number displayed on the counter to see if it's your turn already.
+在等待以及和你对象聊天的同时，你时不时会看看柜台的取餐号码，看看是不是轮到你了。
 
-Then at some point, it finally is your turn. You go to the counter, get your burgers and come back to the table.
+在某个时候，终于轮到你了。你来到柜台，取到你的汉堡包并回到座位。
 
-You and your crush eat the burgers and have a nice time.
+你和你的对象吃着汉堡，度过了一段愉快的时光。
 
 ---
 
-Imagine you are the computer / program in that story.
+想象一下你就是故事中的计算机/程序。
 
-While you are at the line, you are just idle, waiting for your turn, not doing anything very "productive". But the line is fast because the cashier is only taking the orders, so that's fine.
+当你在排队的时候，你是闲着的，等着排队，并没有做很”有生产力“的事情。但是排队的速度很快，因为收银员只接受点餐，所以还行。
 
 Then, when it's your turn, you do actual "productive" work, you process the menu, decide what you want, get your crush's choice, pay, check that you give the correct bill or card, check that you are charged correctly, check that the order has the correct items, etc.
 
